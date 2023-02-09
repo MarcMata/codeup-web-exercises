@@ -15,10 +15,9 @@
 // console.log(perplexed + 2);
 // NaN
 //
-// // let price = 2.7;
-// // price.toFixed(2);
-// // console.log(price)
-// // 2.7
+// let price = 2.7;
+// console.log(price.toFixed(2))
+// '2.70'
 //
 // // let price = "2.7";
 // // console.log(price.toFixed(2));
@@ -31,7 +30,7 @@
 // // false
 //
 // console.log(isNaN(""))
-// //false
+//false
 //
 // console.log(isNaN("string"))
 // //true
@@ -64,7 +63,7 @@
 // //false
 //
 // //to illustrate why the isNaN() function is needed:
-// console.log(NaN == NaN) //false
+// console.log(NaN == NaN) //false it's needed to confirm if something is not a number
 //
 // console.log(!true); //false
 //
@@ -151,23 +150,16 @@
 // let regularPerson = itemsBought < 2;
 // let applyProductOffer = (regularPerson && offerNotExpired) && premiumPerson;
 
-console.log(applyProductOffer + `, if true, apply offer. If false, deny`);
-
-let username = 'codeup';
-let password = 'notastrongpassword';
-
-let atLeast5 = password.length >= 5;
-console.log(atLeast5);
-let noUsername = password !== username;
-console.log(noUsername)
-let noMoreThan20 = username <= 20;
-console.log(noMoreThan20)
-let noWhiteSpace = password.indexOf(' ') <= 0 && username.indexOf(` `) <= 0;
-console.log(noWhiteSpace)
-
-//Create a variable that holds a boolean value for each of the following conditions:
+// console.log(applyProductOffer + `, if true, apply offer. If false, deny`);
 //
-// the password must be at least 5 characters
-// the password must not include the username
-// the username must be no more than 20 characters
-// neither the username or password can start or end with whitespace
+// let username = 'codeup';
+// let password = 'notastrongpassword';
+//
+// let atLeast5 = password.length >= 5;
+// console.log(atLeast5);
+// let noUsername = password !== username;
+// console.log(noUsername)
+// let noMoreThan20 = username <= 20;
+// console.log(noMoreThan20)
+// let noWhiteSpace = password.indexOf(' ') <= 0 && username.indexOf(` `) <= 0;
+// console.log(noWhiteSpace)

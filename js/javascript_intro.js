@@ -18,24 +18,24 @@
 // let var13; //undefined
 //
 // let var14 = 'I like Yamba\'s sweater' // a backslash -->\ <-- will ignore that character coming after it
-let var15; //undefined
-let var16 = -4346;
-
-let var17;
-let var18 = "Logged in user";
-
-let userName = "Marc";
-let nameIdontLike = "Marc";
-
-let userID = 8675309;
-let postAuthorID = 3462353246;
-
-let myShoes = "Ariats"; //lets can be changed
-let myName = "Marc"; //const cannot be re-assigned. do not use a var
+// let var15; //undefined
+// let var16 = -4346;
+//
+// let var17;
+// let var18 = "Logged in user";
+//
+// let userName = "Marc";
+// let nameIdontLike = "Marc";
+//
+// let userID = 8675309;
+// let postAuthorID = 3462353246;
+//
+// let myShoes = "Ariats"; //lets can be changed
+// let myName = "Marc"; //const cannot be re-assigned. do not use a var
 
 // console.log('The myShoes variable is equal to ' + myShoes);
-
-myShoes = "Chanclas";
+//
+// myShoes = "Chanclas";
 
 // console.log(myShoes)
 
@@ -48,14 +48,14 @@ myShoes = "Chanclas";
 //  // myBankAccount = myBankAccount % 2;
 // myBankAccount %= 2;
 
-let counter = 1;
-
-counter++; //increments of 1
-counter--; //decrements of 1
-++counter; //Gets added before it is logged
---counter; //
-
-let pie = 3.14;
+// let counter = 1;
+//
+// counter++; //increments of 1
+// counter--; //decrements of 1
+// ++counter; //Gets added before it is logged
+// --counter; //
+//
+// let pie = 3.14;
 
 // pie = pie.toFixed(); //cannot run tofixed on strings. Can be used for money.
 // // let price = `$` + 21.50.toFixed(2); // multiple ways to do this problem
@@ -67,7 +67,7 @@ let pie = 3.14;
 // price = parseFloat(price); //parseint is it's own function while toFixed is added to the end of data
 // console.log(price);
 
-let discordName = "[YOLOdfadfadf]Jason";
+// let discordName = "[YOLOdfadfadf]Jason";
 // discordName = discordName.split(']');
 // console.log(discordName);
 //  discordName = discordName[1].trim();
@@ -76,13 +76,13 @@ let discordName = "[YOLOdfadfadf]Jason";
 // let sPosition = discordName.indexOf('s');
  // console.log(discordName)
  // console.log(discordName.length) //length starts at one, tells you how many characters are in the string. positions in an array start at 0.
- // console.log(shortName)
-let guildCharEnd = discordName.indexOf(']') + 1;
-let guildName = discordName.substring(0,guildCharEnd);
-discordName = discordName.substring(guildCharEnd);
-let consoleMessage = `The user's name is ${discordName}. 
-And they are a member of the ${guildName} guild.`
- console.log(consoleMessage);
+// console.log(shortName)
+// let guildCharEnd = discordName.indexOf(']') + 1;
+// let guildName = discordName.substring(0,guildCharEnd);
+// discordName = discordName.substring(guildCharEnd);
+// let consoleMessage = `The user's name is ${discordName}.
+// And they are a member of the ${guildName} guild.`
+//  console.log(consoleMessage);
 //  let user = "Marc";
 // let dontLike = "marc";
 // let message = "i don't like you! Go away!";
@@ -95,4 +95,49 @@ And they are a member of the ${guildName} guild.`
 
 //backtick syntax: `The user's name is _. And they are a member of the _guild.`
 
+// function doSomething();
+// parseInt("42");
+//
+// let result = doSomething();
+// console.log(doSomething());
+//
+// let myString = "42";
+// let myNumber = parseInt(myString)
 
+// function myFunction(input) {
+//     let output = 42 * 4
+//     return output;
+// }
+//
+// function increment(x) {
+//     return x + 1;
+// }
+//
+// let four = increment(3);
+// console.log(four);
+// let six = increment(increment(increment(3)));
+// console.log(six);
+//
+// function increment(someNumber) {
+//     return someNumber + 1;
+//     console.log('you will never see this.');
+//     return someNumber + 2;
+// }
+//
+// let eight = increment(7);
+// console.log(eight)
+//
+// function sum(a,b) {
+//     return a + b;
+// }
+//
+// let x = 3
+// let seven = sum (x,4)
+//
+// console.log(seven)
+//
+// function shout(message) {
+//     console.log(message.toUpperCase() + "!!!");
+// }
+//
+// shout("hello there");
