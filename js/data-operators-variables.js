@@ -94,14 +94,16 @@
 // console.log(!!"0"); //true
 //
 // let sample = "Hello Codeup";
-//  sampleLength = `The sample length is ${sample.length}`
+// sampleLength = `The sample length is ${sample.length}`;
 // console.log(sampleLength) //The sample length is 12
 //
 // let sampleUppercase = `This is the sample all upercase: ${sample.toUpperCase()}`
 // console.log(sampleUppercase); // This is the sample all upercase: HELLO CODEUP
 //
-// let sampleConc = sample + " Students";
+// let sampleConc = sample + " Students.";
+// let sampleConcBetter = `${sample} Students.`
 // console.log(sampleConc); //Hello Codeup Students
+// console.log(sampleConcBetter); //Hello Codeup Students
 //
 // let sampleReplace = sampleConc.replace(" Students", " Class");
 // console.log(sampleReplace); //Hello Codeup Class
@@ -120,10 +122,10 @@
 // let hercules = 1 * pricePerDay;
 // let total = littleMermaid + brotherBear + hercules;
 //
-// console.log(`Total amount to pay: $` + total);
+// console.log(`Total amount to pay: $${pricePerDay}. The total cost for the customer is $${total}`);
 //
-// let amazonPPH = 400;
-// let googlePPH = 380;
+// let amazonPPH = 380;
+// let googlePPH = 400;
 // let facebookPPH = 350;
 //
 // let amazonHours = 4
@@ -136,30 +138,55 @@
 //
 // let totalPay = amazonPay + googlePay + facebookPay
 //
-// console.log(`The total payment is as follows: ` + totalPay)
-//
+// console.log(`The total payment is as follows: $${totalPay}`)
+// //
 // let fullClass = false
 // let noConflictingSchedule = false
 //
 // let enrollStudent = !fullClass && !noConflictingSchedule
 // console.log(`when ${enrollStudent}, enroll the student, false, do not enroll`);
+// let scheduleConflicts = false;
+// let maxClassSize = 30;
+// let currentClassSize = 24;
 //
+// let canEnroll = scheduleConflicts && currentClassSize < maxClassSize
+
 // let itemsBought = 3;
 // let premiumPerson = true;
 // let offerNotExpired = true;
-// let regularPerson = itemsBought < 2;
+// let regularPerson = itemsBought >= 2;
 // let applyProductOffer = (regularPerson && offerNotExpired) && premiumPerson;
-
+//
 // console.log(applyProductOffer + `, if true, apply offer. If false, deny`);
+// let minCartSize = 2;
+// let cartSize = 3;
+// let premiumMeber = false;
+// let offerExpired = false;
 //
-// let username = 'codeup';
-// let password = 'notastrongpassword';
+// let canOfferApply = (premiumMeber || (cartSize >= minCartSize)) && !offerExpired
 //
+// console.log(canOfferApply)
+let username = 'codeup';
+let password = 'notastrongpassword';
+
 // let atLeast5 = password.length >= 5;
 // console.log(atLeast5);
 // let noUsername = password !== username;
-// console.log(noUsername)
-// let noMoreThan20 = username <= 20;
-// console.log(noMoreThan20)
+// let noUsername = password.indexOf(username) >= 0;
+// console.log(noUsername);
+// let noMoreThan20 = username.length <= 20;
+// console.log(noMoreThan20);
 // let noWhiteSpace = password.indexOf(' ') <= 0 && username.indexOf(` `) <= 0;
-// console.log(noWhiteSpace)
+// console.log(noWhiteSpace);
+
+// let userLength = username.length;
+// let passLength = password.length;
+// let firstCharUser = username.substring(0,1);
+// let lastCharUser = username.substring((userLength - 1), userLength);
+// let firstCharPass = password.substring(0,1);
+// let lastCharPass = password.substring((passLength - 1), passLength);
+//
+// let hasWhiteSpace = firstCharUser === ` ` || lastCharUser  === ` ` || firstCharPass  === ` ` || lastCharPass  === ` `
+console.log(hasWhiteSpace)
+
+username.startsWith() || username.endsWith()
