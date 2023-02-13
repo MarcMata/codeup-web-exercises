@@ -59,8 +59,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 const isTwo = (num) => {
-    let result = num === 2
-    return result
+    let result = num === 2;
+    return result;
 }
 
 console.log(isTwo(random));
@@ -85,6 +85,17 @@ console.log(calculateTip(0.20, 33.42))
 console.log(calculateTip(0.20, 22.50))
 console.log(calculateTip(0.15, 33.42))
 
+//The way the instructor did it
+// const calculateTip = (tipPercentage, billTotal) => {
+//     let tipPercentageNum = parseFloat(tipPercentage);
+//     let billTotalNum = parseFloat(billTotal);
+//     let amountToTip = (tipPercentageNum / 100) * billTotalNum;
+//     return amountToTip;
+// }
+//
+// let tipAmount = calculateTip(15, 100);
+// console.log(`The amount you should tip is: ${tipAmount.toLocaleString(`en-US`, {style: `currency`, currency: `USD`})}`)
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -92,10 +103,17 @@ console.log(calculateTip(0.15, 33.42))
  * then display the dollar amount they should tip
  */
 
-let  tipTotal = calculateTip(parseFloat(prompt(`What percentage do you want to tip(0.20 for 20%)?`)),parseFloat(prompt(`What is your bill total?`)))
+let  billTotal = calculateTip(parseFloat(prompt(`What percentage do you want to tip(0.20 for 20%)?`)),parseFloat(prompt(`What is your bill total?`)))
 
-alert(`This is the dollar amount you should tip: $${tipTotal}`);
-console.log(`This is the dollar amount you should tip: $${tipTotal}`)
+alert(`This is the dollar amount you should tip: $${billTotal}`);
+console.log(`This is the dollar amount you should tip: $${billTotal}`)
+
+//The way the instructor did it
+// let userBill = parseFloat(prompt(`How much was your bill?`));
+// let userTipPercentage = parseFloat(prompt(`What percentage would you like to tip?`))
+// let tipAmount = calculateTip(userTipPercentage, userBill)
+//
+// console.log(tipAmount)
 
 /**
  * TODO:
@@ -113,9 +131,13 @@ console.log(`This is the dollar amount you should tip: $${tipTotal}`)
  */
 
 const applyDiscount = (originalPrice, discountPercent) => {
-    let totalDiscount = (originalPrice * discountPercent);
+    let totalDiscount = (parseFloat(originalPrice) - parseFloat(originalPrice) * parseFloat(discountPercent));
     return totalDiscount.toFixed(2)
 }
+
+//the way the instructor did it
+// let discountMessage = applyDiscount(`100`, `.2`);
+// console.log(`After the applied discount, the price is ${discountMessage.toLocaleString(`en-US`, {style: `currency`, currency: `USD`})}`)
 
 let employeeDiscount = applyDiscount(parseFloat(prompt(`Enter the total price of all the items you bought`)),parseFloat(prompt(`Enter the discount for your employee`)));
 alert(`You have saved $${employeeDiscount} with your employee discount`);
