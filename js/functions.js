@@ -92,10 +92,10 @@ console.log(calculateTip(0.15, 33.42))
  * then display the dollar amount they should tip
  */
 
-let  billTotal = calculateTip(prompt(`What percentage do you want to tip(0.20 for 20%)?`),prompt(`What is your bill total?`))
+let  tipTotal = calculateTip(parseFloat(prompt(`What percentage do you want to tip(0.20 for 20%)?`)),parseFloat(prompt(`What is your bill total?`)))
 
-alert(`This is the dollar amount you should tip: $${billTotal}`);
-console.log(`This is the dollar amount you should tip: $${billTotal}`)
+alert(`This is the dollar amount you should tip: $${tipTotal}`);
+console.log(`This is the dollar amount you should tip: $${tipTotal}`)
 
 /**
  * TODO:
@@ -117,6 +117,6 @@ const applyDiscount = (originalPrice, discountPercent) => {
     return totalDiscount.toFixed(2)
 }
 
-let employeeDiscount = applyDiscount(prompt(`Enter the total price of all the items you bought`),(prompt(`Enter the discount for your employee`)));
+let employeeDiscount = applyDiscount(parseFloat(prompt(`Enter the total price of all the items you bought`)),parseFloat(prompt(`Enter the discount for your employee`)));
 alert(`You have saved $${employeeDiscount} with your employee discount`);
 console.log(`You have saved $${employeeDiscount} with your employee discount`);
