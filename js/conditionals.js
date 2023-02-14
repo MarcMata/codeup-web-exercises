@@ -156,6 +156,7 @@ const calculateTotal = (luckyNumber, totalAmount) => {
     }
 }
 
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -190,27 +191,13 @@ const calculateTotal = (luckyNumber, totalAmount) => {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-const isEvenOdd = (number) => {
-    if(number % 2 === 0) {
-        return "The number is even";
-    } else {
-        return `The number is odd`;
-    }
-}
 
-const isPositiveNegative = (number) => {
-    if(number > 0) {
-        return `The number entered was positive`;
-    } else {
-        return `the number entered was negative`;
-    }
-}
-
-// confirmMessage = confirm(`Would you like to enter a number?`);
+/*-----I Wrote This-----*/
+// const confirmMessage = confirm(`Would you like to enter a number?`);
 // if (confirmMessage) {
-//     let promptedNumber = parseInt(prompt(`Please enter a number`));
+//     const promptedNumber = parseFloat(prompt(`Please enter a number`));
 //     if (isNaN(promptedNumber)) {
-//         alert(`That is not a number.`);
+//         alert(`That is not a number. Enter the correct data type and try again`);
 //     } else {
 //         let numberAdded = promptedNumber + 100;
 //         if (promptedNumber % 2 === 0) {
@@ -224,28 +211,81 @@ const isPositiveNegative = (number) => {
 //         }
 //     }
 // }
-const checkNumber = (promptedNumber) => {
-    confirmMessage = confirm(`Would you like to enter a number?`);
-    if (confirmMessage) {
-        let promptedNumber = parseInt(prompt(`Please enter a number`));
-        if (isNaN(promptedNumber)) {
-            alert(`That is not a number.`);
-        } else {
-            let numberAdded = promptedNumber + 100;
-            if (promptedNumber % 2 === 0) {
-                alert(isEvenOdd(promptedNumber));
-                alert(isPositiveNegative(promptedNumber));
-                alert(`${promptedNumber} + 100 = ${numberAdded}`);
-            } else if (promptedNumber % 2 !== 0) {
-                alert(isEvenOdd(promptedNumber));
-                alert(isPositiveNegative(promptedNumber));
-                alert(`${promptedNumber} + 100 = ${numberAdded}`);
-            }
-        }
-    }
-}
 
-const promptForValue = () => {
-    let number = parseInt(prompt(`Please enter a number`));
-    return number;
-}
+/*------instructor written----------*/
+// const wantsToEnterNumber = confirm("Would you like to enter a number?");
+// if (wantsToEnterNumber) {
+//     const userNumber = parseFloat(prompt(`Enter a number:`));
+//     if (isNumericAndNotNaN(userNumber)) {
+//         if (userNumber % 2 === 0) {
+//             if (userNumber % 2 === 0) {
+//                 alert(`That number is even!`);
+//             } else {
+//                 alert("That number is odd!");
+//             }
+//             alert(`That number plus 100 is ` + (userNumber + 100));
+//             if (userNumber < 0) {
+//                 alert(`That number is negative!`);
+//             } else if (userNumber > 0) {
+//                 alert(`That number is positive!`);
+//             } else {
+//                 alert(`That number is neither positive or negative if you enter 0, unless you are in FRANCE`)
+//             }
+//         }
+//     }
+// }
+//
+// function getNumber(){
+//     const wantsToEnterNumber = confirm("Would you like to enter a number?");
+//     if (wantsToEnterNumber){
+//         const userNumber = parseFloat(prompt("Enter a number:"));
+//         return userNumber
+//     }
+//     return false;
+// }
+//
+// function analyzeNumber(number){
+//     if (isNumericAndNotNaN(number)) {
+//         if (userNumber % 2 === 0) {
+//             if (userNumber % 2 === 0) {
+//                 alert(`That number is even!`);
+//             } else {
+//                 alert("That number is odd!");
+//             }
+//             alert(`That number plus 100 is ` + (userNumber + 100));
+//             if (userNumber < 0) {
+//                 alert(`That number is negative!`);
+//             } else if (userNumber > 0) {
+//                 alert(`That number is positive!`);
+//             } else {
+//                 alert(`That number is neither positive or negative if you enter 0, unless you are in FRANCE`)
+//             }
+//         }
+// }
+
+// const checkNumber = (promptedNumber) => {
+//     let confirmMessage = confirm(`Would you like to enter a number?`);
+//     if (confirmMessage) {
+//         let promptedNumber = parseInt(prompt(`Please enter a number`));
+//         if (isNaN(promptedNumber)) {
+//             alert(`That is not a number.`);
+//         } else {
+//             let numberAdded = promptedNumber + 100;
+//             if (promptedNumber % 2 === 0) {
+//                 alert(isEvenOdd(promptedNumber));
+//                 alert(isPositiveNegative(promptedNumber));
+//                 alert(`${promptedNumber} + 100 = ${numberAdded}`);
+//             } else if (promptedNumber % 2 !== 0) {
+//                 alert(isEvenOdd(promptedNumber));
+//                 alert(isPositiveNegative(promptedNumber));
+//                 alert(`${promptedNumber} + 100 = ${numberAdded}`);
+//             }
+//         }
+//     }
+// }
+//
+//
+// const promptForValue = () => {
+//     let number = parseInt(prompt(`Please enter a number`));
+//     return number;
+// }
