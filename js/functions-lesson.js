@@ -72,3 +72,127 @@
 // (function(){
 //
 // })();
+/*--------------------------------------------------------------------------------------------------*/
+// function negativize(input) {
+//     if (input > 0) {
+//         return -input;
+//     } else if (input <= 0) {
+//         return input
+//     } else if (typeof input === "string") {
+//         return `negative` + input;
+//     }
+// }
+
+// function negativize(input){
+//     if (typeof input === "string" || isNaN(parseFloat(input))){
+//         return "that is not a number!";
+//         }  else if (input > 0) {
+//         return -input;
+//     } else {
+//         return input;
+//     }
+// }
+
+// function negativize(input) {
+//     if (isNan(parseFloat(input))) {
+//         return "that is not a number!";
+//     } else if (input > 0) {
+//         return -input
+//     } else {
+//         return input;
+//     }
+// }
+
+// console.log(negativize(532))
+
+// const reverse = (str) => {
+//     let words = str.split(``);
+//     console.log(words);
+//     let charsReversed = words.reverse();
+//     console.log(charsReversed);
+//     return charsReversed.join(``);
+// }
+//shortcut
+// const reverse = (str) => {
+//     return str.split(``).reverse().join(``);
+// }
+// console.log(reverse(`gnisrever nuf toofgib`));
+
+// //functions practice
+// const returnTwo = () => {
+//     return 2
+// }
+//
+// console.log(returnTwo())
+//
+// const sayHowdy = () => {
+//     return `Howdy!`;
+// }
+//
+// console.log(sayHowdy());
+//
+// const returnName = () => {
+//     return `Marc!!!!!`;
+// }
+//
+// console.log(returnName())
+//
+// const addThree = (number) => {
+//     return number + 3
+// }
+//
+// console.log(addThree(5))
+//
+// const sayString = (inputString) => {
+//     return `${inputString}`;
+// }
+//
+// console.log(sayString(`codeup`))
+//
+// const lowerCase = (string) => {
+//     let toLowerCase = string;
+//     return toLowerCase.toLowerCase()
+// }
+//
+//
+// console.log(lowerCase(`NOOOOOOOOOOOO`));
+//
+// const  double = (n) => {
+//     let doubleN = n * 2
+//     return doubleN
+// }
+//
+// console.log(double(23));
+//
+// const triple = (n) => {
+//     let tripleN = n * 3
+//     return tripleN
+// }
+//
+// console.log(triple(23));
+//
+// const quadruple = (n) => {
+//     let quadrupleN = n * 4;
+//     return quadrupleN
+// }
+//
+// console.log(quadruple(23));
+//
+// const half = (n) => {
+//     let halfN = n / 2;
+//     return halfN
+// }
+//
+// console.log(half(23))
+//
+// const subtract = (a,b) => {
+//     let subtractAB = a - b
+//     return subtractAB
+// }
+//
+// console.log(subtract(5,4))
+
+// const timeOfTheYear = (Month) => {
+//     let monthsOfTheYear = [January, February, March, April, May, June, July, August, September, October, November, December]
+//     if spring = 1, 2, 3
+// }
