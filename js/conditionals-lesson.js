@@ -56,7 +56,7 @@
 //     return dividend % divisor === 0 ? console.log(`Divisible by ${divisor}!`) : (`Not divisible by ${divisor}!`);
 // }
 
-const divisible = (dividend, divisor) => dividend % divisor === 0 ? `Divisible by ${divisor}!` : `Not divisible by ${divisor}`
+// const divisible = (dividend, divisor) => dividend % divisor === 0 ? `Divisible by ${divisor}!` : `Not divisible by ${divisor}`
 
 // function divisible(dividend, divisor){
 //     return dividend % divisor === 0;
@@ -66,7 +66,11 @@ const divisible = (dividend, divisor) => dividend % divisor === 0 ? `Divisible b
 // ### IF / ELSE IF / ELSE
 //
 // #### Create a function called `getToDestination` which will help determine how a person can get to their destination!
-//
+
+
+const goToDestination = (age, isInsured, hasCar, canGetRideshare) => {
+
+}
 //     It will accept 4 arguments and the parameter names are:
 //
 //     - age - the age of the rider

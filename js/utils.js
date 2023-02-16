@@ -6,9 +6,9 @@
  */
 const isEvenOdd = (number) => {
     if(number % 2 === 0) {
-        return "The number is even";
+        return "is even";
     } else {
-        return `The number is odd`;
+        return `is odd`;
     }
 }
 
@@ -32,4 +32,35 @@ function formatToLocaleString(number, language, country, currency){
 
 const isNumericAndNotNaN = (input) => {
     return !isNaN(parseFloat(input)) && input !== null && typeof input !== "boolean";
+}
+
+const buildPyramid = (rows) => {
+    //loop through rows
+    for (let i = 1; i <= rows; i++){
+        let row = "";
+        for (let j = 1; j <= rows -i; j++) {
+            row+="  ";
+        }
+        //loop to add the asterisks
+        for (let k = 1; k <= 2 * i - 1; k++) {
+            row += "* ";
+        }
+        console.log(row);
+    }
+}
+
+// You can use the Math.random() method to generate a random decimal number between 0 and 1, and then multiply
+// it by the range of the numbers you want (i.e. 200 - 20 = 180)
+// and add the minimum number you want (i.e. 20) to shift the range to the desired one.
+// Here is an example code snippet that generates a random number between 20 and 200 (inclusive) using this method:
+//     javascript
+// Copy code
+// const randomNumber = Math.floor(Math.random() * 181) + 20;
+// console.log(randomNumber);
+// In this example, Math.random() generates a random decimal number between 0 and 1. When you multiply this by 181,
+// you get a random decimal number between 0 and 181. When you add 20 to this,
+// you get a random number between 20 and 200. The Math.floor() function is used to round down the result to an integer.
+
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
