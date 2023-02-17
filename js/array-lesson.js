@@ -53,3 +53,36 @@ studentSeating.forEach((row)=>{
         console.log(student)
     });
 });
+/*-------------------------------*/
+let daysOfTheWeek = [`Monday`,`Tuesday`,`Wednesday`,`Thursday`];
+console.log(daysOfTheWeek)
+
+daysOfTheWeek.unshift(`Sunday`);
+console.log(daysOfTheWeek);
+
+daysOfTheWeek.push(`Friday`, `Saturday`);
+
+console.log(daysOfTheWeek);
+
+let todoList = [`Take out the trash`,`Clean the car`,`Pay the bills`];
+
+console.log(`My todo list:`);
+console.log(todoList);
+
+console.log(`Completing the last item: ${todoList[todoList.length-1]}`);
+
+let removedItem = todoList.pop();
+
+console.log(`Task complete: ${removedItem}`);
+
+console.log(todoList)
+
+console.log(`completing the first item: ${todoList[0]}`);
+
+let doneItem = todoList.shift();
+
+console.log(`Task complete: ${doneItem}`);
+
+
+console.log(todoList);
+
