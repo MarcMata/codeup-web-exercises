@@ -29,8 +29,12 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    person.sayHello = () => {
-        console.log(`Hello from ${person.firstName} ${person.lastName}`)
+    // person.sayHello = () => {
+    //     console.log(`Hello from ${person.firstName} ${person.lastName}`)
+    // }
+
+    person.sayHello = function(){
+        return `Hello from ${person.firstName} ${person.lastName}`
     }
 
     person.sayHello();
@@ -64,7 +68,7 @@
         let priceAfterDiscount = (shopper.amount - discount)
         if (shopper.amount >= 200){
             console.log(`${shopper.name}'s price before discount is ${formatAsUSCurrency(priceBeforeDiscount)}\n
-         Your discount is ${formatAsUSCurrency(discount)} \n 
+         Your discount is ${formatAsUSCurrency(discount)} \n
          Your price after discount is ${formatAsUSCurrency(priceAfterDiscount)}`);
         } else {
             console.log(`${shopper.name} has no discount. \n
@@ -72,6 +76,11 @@
         }
     });
 
+    // shoppers.forEach(shopper => {
+    //     const discount = shopper.amount > 200 ? shopper.amount * .12 : 0
+    //     const total = shopper.amount - discount;
+    //     console.log(`${formatAsUSCurrency(shopper.name)} -- total: ${formatAsUSCurrency(shopper.amount)}, discount: ${formatAsUSCurrency(discount)}, final total: ${formatAsUSCurrency(total)}`);
+    // });
 
 
     /** TODO:
@@ -91,27 +100,27 @@
         {
             title: `Salmon of doubt`,
             firstName: `Douglas`,
-            lastName: `Adams`
+            lastName: ` Adams`
         },
         {
             title: `The Da Vinci Code`,
             firstName: `Dan`,
-            lastName: `Brown`
+            lastName: ` Brown`
         },
         {
             title: `To Kill a Mockingbird`,
             firstName: `Harper`,
-            lastName: `Lee`
+            lastName: ` Lee`
         },
         {
             title: `Hannibal`,
             firstName: `Thomas`,
-            lastName: `Harris`
+            lastName: ` Harris`
         },
         {
             title: `The Lord of the Rings`,
             firstName: `J. R. R`,
-            lastName: `Tolkien`
+            lastName: ` Tolkien`
         },
     ]
     console.log(books)
@@ -163,9 +172,9 @@
         this.lastName = authorLastName;
     }
 
-    const newBooks = [];
-   newBooks.push(new createBook(`Clifford the Big Red Dog`,`Norman`,`Bridwell`));
+   const newBooks = [];
+   newBooks.push(new createBook(`All systems red`,`Martha`,` Well`));
 
-
+    console.log(books)
 
 })();
