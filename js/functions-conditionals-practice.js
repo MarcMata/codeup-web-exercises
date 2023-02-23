@@ -236,9 +236,15 @@ function areIdentical(input1, input2){
     return input1 === input2
 }
 // - Make a function named `not(input)` returns the input with a flipped boolean
+function not(input){
+    return !input;
+}
 
 // - Make a function named `notNot(input)` that the negation of the negation of the
 // input.
+function notNot(input){
+    return !!input;
+}
 // - Make a function named `and(predicate1, predicate2)` that returns the logical
 // operation of AND
 // - Make a function named `or(predicate1, predicate2)` that returns the logical
