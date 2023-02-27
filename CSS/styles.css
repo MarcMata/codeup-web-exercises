@@ -1,0 +1,21 @@
+/*p {*/
+/*    color: #a21b1b;*/
+/*    text-transform: initial;*/
+/*}*/
+
+/*a period will target a class*/
+/*To target the id you will use a hashtag*/
+
+.red-paragraph {
+        color: #a21b1b;
+        text-transform: initial;
+}
+
+#paragraph1 {
+        font-style: italic;
+}
+
+/*combo class*/
+.red-paragraph.smaller-font {
+        font-size: 10px;
+}
