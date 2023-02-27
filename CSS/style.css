@@ -1,3 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 h1 {
-    color: purple;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #03935e;
+    text-decoration: underline;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: aquamarine;
+    background-image: url("../images/background-css-exercise.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 20px;
+}
+
+li {
+    list-style: upper-roman;
+}
+
+table, th, td {
+    border: 1px solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 9px 12px;
+    background-color: white;
+
+}
+
+table {
+    font-family: "Times New Roman";
+    border-collapse: collapse;
+    box-shadow: 1px 1px 20px -3px #f00;
+}
+
+th{
+    text-align: center;
+}
+td {
+    text-align: left;
+}
+
+a {
+    color: darkblue;
+    transition: all ease .3s;
+}
+
+a:visited{
+    color:deeppink;
+}
+a:hover{
+    color:darkblue;
+    transform: scale(1.1);
+}
+
+a:active {
+    color:darkslategrey;
+}
+
+.feature-container {
+    display:flex;
+    justify-content: space-between;
+}
+
+.text-center {
+    text-align: center;
 }
