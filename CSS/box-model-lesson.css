@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.page-wrapper.all-centered {
+    justify-content: center;
+    align-items: center;
+}
+
+/*margin pushes stuff away, while padding pushes stuff inward*/
+
+.box {
+    width: 400px;
+    height: 300px;
+    background-color: grey;
+    padding: 40px;
+    border: 10px solid #000;
+/* for border = width, type of line, color*/
+}
+
