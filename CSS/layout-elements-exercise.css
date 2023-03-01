@@ -9,6 +9,7 @@ header.container {
 }
 .column.hero-text {
     color: gray;
+    gap: 30px;
 }
 
 .column.hero-box {
@@ -21,7 +22,7 @@ header.container {
     border-radius: 50px;
     height: 100px;
     width: 100px;
-    border: 1px solid black;
+    border: 1px solid gray;
 }
 
 p {
@@ -34,11 +35,13 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 60px
+    font-size: 60px;
+    line-height: 60px;
+    gap: 50px;
 }
 
 h2 {
-    font-size: 40px
+    font-size: 40px;
 }
 
 
@@ -54,4 +57,17 @@ header img {
 
 .features.container p {
     align-self: center;
+}
+
+ .row-gap{
+     margin-bottom: 50px;
+ }
+
+ .features-title p {
+     font-size: 21px;
+     line-height: 60px;
+ }
+
+p.text-center {
+    font-size: 21px;
 }
