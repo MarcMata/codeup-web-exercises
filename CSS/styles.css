@@ -19,19 +19,3 @@
 .red-paragraph.smaller-font {
         font-size: 10px;
 }
-
-.page-wrapper {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        row-gap: 40px;
-}
-
-.page-wrapper.all-centered {
-        justify-content: center;
-        align-items: center;
-}
-
-.image-size-change {
-        width: 500px;
-}

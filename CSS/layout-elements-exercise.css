@@ -1,0 +1,57 @@
+header.container {
+    height: 80px;
+    border-bottom: 1px solid lightgray;
+}
+
+.container.hero-scene {
+    height: 80vh;
+    background-color: lightgray;
+}
+.column.hero-text {
+    color: gray;
+}
+
+.column.hero-box {
+    height: 50vh;
+    background-color: gray;
+    border-radius: 10px
+}
+
+.column.features img {
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
+
+p {
+    color: gray;
+    display: flex;
+}
+
+h1, h2, h3 {
+    color: gray;
+}
+
+h1 {
+    font-size: 60px
+}
+
+h2 {
+    font-size: 40px
+}
+
+
+header img {
+    height: 60px;
+}
+
+.column button {
+    background: gray;
+    color: white;
+    border-radius: 5px;
+}
+
+.features.container p {
+    align-self: center;
+}
