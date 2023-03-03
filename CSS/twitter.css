@@ -208,7 +208,7 @@ nav {
 .features-tweets button {
     border-bottom: 4px solid #4C9BEF;
     border-bottom-width: 3px;
-    border-radius: 50px;
+    border-radius: 4px;
     /*margin-bottom: .3px;*/
 }
 
