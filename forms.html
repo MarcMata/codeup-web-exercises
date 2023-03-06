@@ -3,29 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Register With Us</title>
+  <link rel="stylesheet" href="CSS/resets.css">
+  <link rel="stylesheet" href="CSS/layout.css">
+  <link rel="stylesheet" href="CSS/forms-style.css">
 </head>
   <body>
-    <form method="POST" action="https://request-inspector.glitch.me/">
-      <input type="text" name="email" placeholder="Enter your email address">
-      <input type="password" name="password" placeholder="Enter your password">
-      <br>
-      <textarea name="bio" id="Describe_yourself" cols="30" rows="10" placeholder="Fill out a short description of yourselves"></textarea>
-      <br>
-      <p>How did you hear about us?</p>
-      A <input type="checkbox" name="how_did_you_hear1" value="a"> billboard<br>
-      B <input type="checkbox" name="how_did_you_hear1" value="b"> radio advertisement<br>
-      C <input type="checkbox" name="how_did_you_hear1" value="c"> internet advertisement<br>
-      D <input type="checkbox" name="how_did_you_hear1" value="d"> other<br>
-      <br>
-      <p>What browser are you using?</p>
-      <select name="" id="">
-        <option value="browser1">Google Chrome</option>
-        <option value="browser2">Mozilla Firefox</option>
-        <option value="browser3">Apple Safari</option>
-      </select>
-      <br>
-      <br>
-      <input type="submit">
-    </form>
+  <page-wrapper class="grow">
+    <div class="container justify-center align-center grow">
+      <form method="POST" action="https://request-inspector.glitch.me/">
+        <input type="text" name="email" placeholder="Enter your email address">
+        <input type="password" name="password" placeholder="Enter your password">
+        <br>
+        <textarea name="bio" id="Describe_yourself" cols="30" rows="10" placeholder="Fill out a short description of yourselves"></textarea>
+        <br>
+        <p>How did you hear about us?</p>
+        A <input type="checkbox" name="how_did_you_hear1" value="a"> billboard<br>
+        B <input type="checkbox" name="how_did_you_hear1" value="b"> radio advertisement<br>
+        C <input type="checkbox" name="how_did_you_hear1" value="c"> internet advertisement<br>
+        D <input type="checkbox" name="how_did_you_hear1" value="d"> other<br>
+        <br>
+        <p>What browser are you using?</p>
+        <select name="" id="">
+          <option value="browser1">Google Chrome</option>
+          <option value="browser2">Mozilla Firefox</option>
+          <option value="browser3">Apple Safari</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit">
+      </form>
+    </div>
+  </page-wrapper>
   </body>
 </html>
