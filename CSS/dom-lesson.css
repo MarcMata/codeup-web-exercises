@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.btn {
+    padding: 10px 40px;
+    font-size: 18px;
+    color: #fff;
+    background-color: darkgreen;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all ease .3s
+}
+
+.btn:hover {
+    background-color: green;
+}
+
+#btnColumn {
+    display: flex;
+    gap:10px;
+}
+
+.page-wrapper.grey {
+    background-color: grey;
+}
