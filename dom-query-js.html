@@ -24,12 +24,25 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<div class="container">
+    <div class="row">
+        <button class="buttonNode1" id="btn1" >Change Header</button>
+        <button class="buttonNode2" id="btn2" >Change SubHeader</button>
+        <button class="buttonNode3" id="btn3"> Change list items</button>
+        <button class="buttonNode4" id="btn4">Mission Accomplished!</button>
+    </div>
+</div>
 
 
 
 <script>
     (function() {
         "use strict";
+        let btn1 = document.querySelector('#btn1');
+        let btn2 = document.querySelector('#btn2');
+        let btn3 = document.querySelector('#btn3');
+        let btn4 = document.querySelector('#btn4');
+
         // TODO: Uncomment next line and get the main header element by id
         let mainHeader = document.querySelector("#main-header");
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
@@ -38,7 +51,10 @@
         mainHeader.appendChild(buttonNode1)
         buttonNode1.addEventListener('click', function(){
             mainHeader.innerHTML = 'Javascript is cool!'
-        })
+        });
+        btn1.addEventListener('click',function(){
+            mainHeader.innerHTML = 'Javascript is cool!'
+        });
 
         // TODO: Uncomment the next line and get the sub header element by id
         let subHeader = document.querySelector("#sub-header");
@@ -49,6 +65,11 @@
         buttonNode2.addEventListener('click', function(){
             subHeader.style.color = 'blue';
         })
+        btn2.addEventListener('click',function(){
+            subHeader.style.color = 'blue';
+        });
+
+
         // TODO: Uncomment the next line and get all list items
         let listItems = document.querySelectorAll('li');
         let ulItems = document.querySelector('ul')
@@ -68,6 +89,16 @@
         buttonNode3.innerHTML = "Add some style to your list!"
         ulItems.appendChild(buttonNode3)
         buttonNode3.addEventListener('click', function(){
+            let blueTextdbid = document.querySelector("li[data-dbid='1']");
+            listItems.forEach(function (element, i) {
+                if (i % 2 !== 0) {
+                    listItems[i].style.color = 'grey' ;
+                }
+            })
+            blueTextdbid.style.color = 'blue'
+        })
+
+        btn3.addEventListener('click',function(){
             let blueTextdbid = document.querySelector("li[data-dbid='1']");
             listItems.forEach(function (element, i) {
                 if (i % 2 !== 0) {
@@ -97,13 +128,16 @@
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         
 
-        let buttonNode5 = document.createElement('button');
-        buttonNode5.innerHTML =  `Change the text in the first sub paragraph to "Mission Accomplished!"`
-        subParagraphs.appendChild(buttonNode5)
-        buttonNode5.addEventListener('click', function(){
+        let buttonNode4 = document.createElement('button');
+        buttonNode4.innerHTML =  `Change the text in the first sub paragraph to "Mission Accomplished!"`
+        subParagraphs.appendChild(buttonNode4)
+        buttonNode4.addEventListener('click', function(){
             subParagraphs.innerText = 'Mission Accomplished!'
         })
 
+        btn4.addEventListener('click',function(){
+            subParagraphs.innerText = 'Mission Accomplished!'
+        });
         // subParagraphs.forEach(function(element, index){
         //     if(index === 0) {
         //         element.innerText = 'Mission accomplished!!!!'
