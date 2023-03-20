@@ -1,0 +1,26 @@
+.top {
+    max-height: 30vh;
+}
+.images-wrapper {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.image-wrapper {
+    display:flex;
+    flex-direction: row;
+    object-fit: cover;
+    transition: left ease .3s;
+    flex: 1 0 0;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.bottom {
+    height: 30vh;
+}
