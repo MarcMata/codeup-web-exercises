@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+<div class="container justify-center">
+    <div class="row">
+        <div class="column">
+            <h1>My Tool Store</h1>
+            <table id="products">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Categories</th>
+                </tr>
+                </thead>
+                <tbody id="insertProducts"></tbody>
+            </table>
+            <button id="refreshBtn">REFRESH</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    const getTools = async (tools) => {
+        let products = document.querySelector("#insertProducts")
+        products.innerHTML = ``
+        let response = await fetch(`data/inventory.json`)
+        let returnedProds = await response.json();
+        returnedProds.forEach(function(e, i){
+            products.innerHTML += `
+            <tr>
+                <td>${e.title}</td>
+                <td>${e.quantity}</td>
+                <td>${e.price}</td>
+                <td> ${e.categories}</td>
+            </tr>
+            `
+        });
+    }
+
+
+
+
+
+
+    // TODO: Take the data from inventory.json and append it to the products table
+
+    (async()=>{
+
+        let tools = await getTools()
+
+        document.querySelector('#refreshBtn').onclick = function() {
+            alert("button was clicked");
+            getTools()
+        };
+    })();
+
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+})();
+
+
+
+
+</script>
+
+</body>
+</html>
+<!--WORKS INSIDE A FOREACH -->
+<!--//     $('tbody').append(`-->
+<!--//     <tr>-->
+<!--    //         <td>${tool.title}</td>-->
+<!--    //         <td>${tool.quantity}</td>-->
+<!--    //         <td>${tool.price}</td>-->
+<!--    //         <td> ${tool.categories}</td>-->
+<!--    //     </tr>-->
+<!--// `);-->
