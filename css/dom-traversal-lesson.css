@@ -1,0 +1,13 @@
+.box {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gap-10 {
+    gap: 10px
+}
+

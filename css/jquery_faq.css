@@ -4,3 +4,23 @@
 .highlight {
     background-color: yellow;
 }
+
+.traversing {
+    background-color: lightblue;
+}
+
+.box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+img {
+    aspect-ratio: 4/3;
+    width: 100%;
+    object-fit: cover;
+    border: 5px solid  saddlebrown;
+}
