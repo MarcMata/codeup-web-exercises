@@ -36,7 +36,7 @@
         products.innerHTML = ``
         let response = await fetch(`data/inventory.json`)
         let returnedProds = await response.json();
-        returnedProds.forEach(function(e, i){
+        returnedProds.forEach(function(e){
             products.innerHTML += `
             <tr>
                 <td>${e.title}</td>
