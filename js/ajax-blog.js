@@ -14,7 +14,6 @@ const getBlogs = async (posts) => {
             `;
         blogPosts.appendChild(row)
     });
-
 }
 
 (async()=>{

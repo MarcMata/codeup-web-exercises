@@ -1,0 +1,116 @@
+/*tools used*/
+.gap-10 {
+    gap:10px;
+}
+
+.dflex {
+    display: flex;
+}
+
+.white-text {
+    color: #ffffff;
+}
+.fontSizeSmall {
+    font-size: 25px;
+}
+.fontSizeMed {
+    font-size: 40px;
+}
+.fontSizeLarge {
+    font-size: 50px;
+}
+.fontSizeXLarge {
+    font-size: 60px;
+}
+/*tools used*/
+
+
+
+.marker {
+    background-image: url("https://www.freeiconspng.com/uploads/restaurant-menu-icon-png-28.png");
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+body {
+    background-color: #ffffff;
+    background-image: linear-gradient(to bottom, #0094fc, #ffffff);
+    background-size: 50% 100%;
+    animation: sunny-sky 10s ease-in-out infinite;
+}
+
+@keyframes sunny-sky {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.blankContainer{
+    height: 10vh;
+}
+
+.headerContainer .row {
+    /*background-color: red;*/
+    height: 10vh;
+    width: 80%;
+}
+/*todays weather starts*/
+section.container{
+    /*background-color: #fff;*/
+}
+.hero-row {
+    display:flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.image {
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+    height: 100%;
+    width: 97%;
+    opacity: .7;
+    border-radius: 10px;
+}
+.todays-low-high {
+    /*background-color: green;*/
+    height: 20vh;
+    width: 50%;
+}
+
+.today-weather-photo {
+    background-color: green;
+    height: 20vh;
+    width: 50%;
+}
+
+.icon {
+    height: 100px;
+    width: 100px;
+}
+/*todays weather ends*/
+
+/*five day weather forecast*/
+
+.weatherCard {
+    margin: 10px 10px;
+    background-color: white;
+    height: 20vh;
+    width: 100%;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #ffffff;
+}
+
+/*five day weather forecast ends*/
