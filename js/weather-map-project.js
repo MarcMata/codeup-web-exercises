@@ -40,13 +40,24 @@ async function weatherMap5Day3Hour(lat = 29.423017, long= -98.48527) {
     data.list.forEach((e, i) => {
         if (i % 8 === 0 && i !== 0) {
             const time = new Date(e.dt * 1000);
+            // Get the high and low temperatures for the current day
+            highTemp = -Infinity;
+            lowTemp = Infinity;
+            for (let j = i; j < i + 8; j++) {
+                if (data.list[j].main.temp > highTemp) {
+                    highTemp = data.list[j].main.temp;
+                }
+                if (data.list[j].main.temp < lowTemp) {
+                    lowTemp = data.list[j].main.temp;
+                }
+            }
             forecastHTML += `
                     <div class="column weather-card align-center">
                         <h3>${daysOfTheWeek[time.getDay()]}</h3>
                         <p>${e.weather[0].description.charAt(0).toUpperCase() + e.weather[0].description.slice(1)}</p>
                         <img class="icon" src="https://openweathermap.org/img/w/${e.weather[0].icon}.png" alt="${e.weather[0].description}">
-                        <p>High: ${e.main.temp_min}°</p>
-                        <p>Low: ${e.main.temp_max}°</p>
+                        <p>High: ${highTemp}°</p>
+                        <p>Low: ${lowTemp}°</p>
                     </div>
             `;
             console.log(daysOfTheWeek[time.getDay()]);
@@ -71,27 +82,27 @@ const currentTemp = document.querySelector('#current-temp')
 
 
 // ACTIVATE WHEN COMPLETE
-setInterval(() => {
-   const time = new Date();
-   const month = time.getMonth();
-   const date = time.getDate();
-   const day = time.getDay();
-   const hour = time.getHours();
-   const hoursIn12HrFormat = hour >= 13 ? hour % 12: hour
-   let minutes = `${time.getMinutes()}`.length === 1 ? '0' + time.getMinutes() : time.getMinutes();
-   const ampm = hour >= 12 ? 'PM' : 'AM'
-
-    timeElement.innerHTML = `
-                            <div class="column align-center" >
-                                <h4 class="fontSizeXLarge white-text">${hoursIn12HrFormat}:${minutes}<span class="fontSizeMed white-text">${ampm}</span></h4>
-                            </div>
-                            `;
-    dateElement.innerHTML = `
-                            <div class="column align-center">
-                                <h4 class="fontSizeMed white-text">${daysOfTheWeek[day]}, ${date} ${months[month]}</h4>
-                            </div>
-                            `;
-},500);
+// setInterval(() => {
+//    const time = new Date();
+//    const month = time.getMonth();
+//    const date = time.getDate();
+//    const day = time.getDay();
+//    const hour = time.getHours();
+//    const hoursIn12HrFormat = hour >= 13 ? hour % 12: hour
+//    let minutes = `${time.getMinutes()}`.length === 1 ? '0' + time.getMinutes() : time.getMinutes();
+//    const ampm = hour >= 12 ? 'PM' : 'AM'
+//
+//     timeElement.innerHTML = `
+//                             <div class="column align-center" >
+//                                 <h4 class="fontSizeXLarge white-text">${hoursIn12HrFormat}:${minutes}<span class="fontSizeMed white-text">${ampm}</span></h4>
+//                             </div>
+//                             `;
+//     dateElement.innerHTML = `
+//                             <div class="column align-center">
+//                                 <h4 class="fontSizeMed white-text">${daysOfTheWeek[day]}, ${date} ${months[month]}</h4>
+//                             </div>
+//                             `;
+// },500);
 
 
 //weather forecast for every three hours for forty instances
