@@ -64,8 +64,8 @@ async function weatherMap5Day3Hour(lat = 29.423017, long= -98.48527) {
                         <h3>${daysOfTheWeek[time.getDay()]}</h3>
                         <p>${e.weather[0].description.charAt(0).toUpperCase() + e.weather[0].description.slice(1)}</p>
                         <img class="icon" src="https://openweathermap.org/img/w/${e.weather[0].icon}.png" alt="${e.weather[0].description}">
-                        <p>High: ${highTemp}°</p>
-                        <p>Low: ${lowTemp}°</p>
+                        <p>High: ${Math.round(highTemp)}°</p>
+                        <p>Low: ${Math.round(lowTemp)}°</p>
                     </div>
             `;
             console.log(daysOfTheWeek[time.getDay()]);
