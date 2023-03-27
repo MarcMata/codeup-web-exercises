@@ -151,6 +151,17 @@ body {
     background-size: 50% 100%;
     animation: sunny-sky 10s ease-in-out infinite;
 }
+/*.page-wrapper{*/
+/*    position: relative;*/
+/*}*/
+
+currently working on
+/*.ipad-frame-background{*/
+/*    position: absolute;*/
+/*    object-fit: cover;*/
+/*    width: 2100px;*/
+/*    height: 150%;*/
+/*}*/
 
 
 @keyframes sunny-sky {
@@ -194,3 +205,4 @@ body {
     font-size: 50px;
 }
 /*tools used*/
+
