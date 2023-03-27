@@ -2,11 +2,19 @@
 const SALng = -98.48527;
 const SALat = 29.423017;
 
+//San Antonio Marker
+const sanAntonioMarker = new mapboxgl.Marker()
+    .setLngLat([-98.48962, 29.42692])
+    .addTo(map)
+const sanAntonioPopUp = new mapboxgl.Popup()
+    .setHTML('<p class="popup">San Antonio</p>');
+sanAntonioMarker.setPopup(sanAntonioPopUp);
 
 //adds todays forecast
 let addingTodaysWeather = document.querySelector('.today-weather-card')
 
 
+//daily weather function(this function is placed in the mapbox js)
 async function weatherMapDaily(lat = 29.423017, long= -98.48527) {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather/?lat=${lat}&lon=${long}&units=imperial&appid=${OPEN_WEATHER_APPID}`);
     const data = await response.json();
@@ -15,11 +23,11 @@ async function weatherMapDaily(lat = 29.423017, long= -98.48527) {
                                 <h3 class="fontSizeLarge today-title">${data.name}</h3>
                                 <p class="fontSizeLarge weather-card-text">${Math.round(data.main.temp)}°</p>
                                 <img class="today-icon" src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="${data.weather[0].description}">
-                                <p class="fontSizeMed weather-card-text">${data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1)}</p>
-                                <p class="fontSizeMed weather-card-text">High: ${Math.round(data.main.temp_min)}°</p>
-                                <p class="fontSizeMed weather-card-text">Low: ${Math.round(data.main.temp_max)}°</p>
-                                <p class="fontSizeMed weather-card-text">Wind speed: ${data.wind.speed}mph</p>
-                                <p class="fontSizeMed weather-card-text" >Wind direction: ${data.wind.deg}°</p>
+                                <p class="fontSizeSmallMed weather-card-text">${data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1)}</p>
+                                <p class="fontSizeSmallMed weather-card-text">High: ${Math.round(data.main.temp_min)}°</p>
+                                <p class="fontSizeSmallMed weather-card-text">Low: ${Math.round(data.main.temp_max)}°</p>
+                                <p class="fontSizeSmallMed weather-card-text">Wind speed: ${Math.round(data.wind.speed)}mph</p>
+                                <p class="fontSizeSmallMed weather-card-text" >Wind direction: ${data.wind.deg}°</p>
                                 `;
 }
 
@@ -31,7 +39,7 @@ async function weatherMapDaily(lat = 29.423017, long= -98.48527) {
 //Adds four day forecast cards
 daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 const addingForecastCards = document.querySelector("#forecastDiv")
-
+//these functions are put in place in mapbox
 async function weatherMap5Day3Hour(lat = 29.423017, long= -98.48527) {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&units=imperial&appid=${OPEN_WEATHER_APPID}`);
     const data = await response.json();
@@ -81,40 +89,25 @@ const timezone = document.querySelector('#time-zone');
 const currentTemp = document.querySelector('#current-temp')
 
 
-// ACTIVATE WHEN COMPLETE
-// setInterval(() => {
-//    const time = new Date();
-//    const month = time.getMonth();
-//    const date = time.getDate();
-//    const day = time.getDay();
-//    const hour = time.getHours();
-//    const hoursIn12HrFormat = hour >= 13 ? hour % 12: hour
-//    let minutes = `${time.getMinutes()}`.length === 1 ? '0' + time.getMinutes() : time.getMinutes();
-//    const ampm = hour >= 12 ? 'PM' : 'AM'
-//
-//     timeElement.innerHTML = `
-//                             <div class="column align-center" >
-//                                 <h4 class="fontSizeXLarge white-text">${hoursIn12HrFormat}:${minutes}<span class="fontSizeMed white-text">${ampm}</span></h4>
-//                             </div>
-//                             `;
-//     dateElement.innerHTML = `
-//                             <div class="column align-center">
-//                                 <h4 class="fontSizeMed white-text">${daysOfTheWeek[day]}, ${date} ${months[month]}</h4>
-//                             </div>
-//                             `;
-// },500);
+// Adds active time that refreshes every .5 milliseconds
+setInterval(() => {
+   const time = new Date();
+   const month = time.getMonth();
+   const date = time.getDate();
+   const day = time.getDay();
+   const hour = time.getHours();
+   const hoursIn12HrFormat = hour >= 13 ? hour % 12: hour
+   let minutes = `${time.getMinutes()}`.length === 1 ? '0' + time.getMinutes() : time.getMinutes();
+   const ampm = hour >= 12 ? 'PM' : 'AM'
 
-
-//weather forecast for every three hours for forty instances
-// const daysEnd = [];
-// data.list.forEach((forecast, index) => {
-//     const dateTime = new Date (forecast.dt * 1000);
-//     if (dateTime.getHours() === 22)
-//         daysEnd.push(index);
-// });
-// console.log(daysEnd)
-//
-// daysEnd.forEach((e,i){
-//     const temperatures = []
-//     temperatures.push(e.list[i].main.temp);
-// });
+    timeElement.innerHTML = `
+                            <div class="column align-center" >
+                                <h4 class="fontSizeXLarge white-text">${hoursIn12HrFormat}:${minutes}<span class="fontSizeMed white-text">${ampm}</span></h4>
+                            </div>
+                            `;
+    dateElement.innerHTML = `
+                            <div class="column align-center">
+                                <h4 class="fontSizeMed white-text">${daysOfTheWeek[day]}, ${date} ${months[month]}</h4>
+                            </div>
+                            `;
+},500);

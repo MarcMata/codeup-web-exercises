@@ -5,22 +5,25 @@
     <title>Weather Map</title>
     <script src="js/keys.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet'/>
     <link rel="stylesheet" href="css/resets.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/weather-map-project.css">
 </head>
 <body>
 <div class="page-wrapper">
+<!--holds the view-->
     <div class="container app-container grow">
         <div class="row row-wrapper grow">
             <img class="image" src="images/clouds-sky.gif" alt="clouds image">
             <div class="container hero-container grow">
                 <div class="row hero-row grow">
-                    <div class="column sidebar">
+<!-- sidebar starts, holds todays forecast-->
+                    <div class="column sidebar shrink">
                         <div class="row " id="time">
-                            <div class="column align-center" >
-                                <h4 class="fontSizeXLarge white-text">7:29 <span class="fontSizeMed white-text">PM</span></h4>
+                            <div class="column align-center">
+                                <h4 class="fontSizeXLarge white-text">7:29 <span
+                                        class="fontSizeMed white-text">PM</span></h4>
                             </div>
                         </div>
                         <div class="row " id="date">
@@ -29,129 +32,39 @@
                             </div>
                         </div>
                         <div class="row grow today-weather-row">
-                            <div class="column today-weather-card align-center grow" id="weather-card-background">
-                                <h3 class=" fontSizeMed today-title">Houston, TX</h3>
-                                <p>Current Temperature</p>
-                                <p>ICON</p>
-                                <p>Todays weather description</p>
-                                <p>Today's Low</p>
-                                <p>Today's High</p>
-                                <p>Wind Speed</p>
-                                <p>Wind Direction</p>
+                            <div class="column today-weather-card align-center" id="weather-card-background">
                             </div>
                         </div>
                     </div>
-
+<!--map column, users interaction with the map-->
                     <div class="column map">
                         <div id='map' style='width: 100%; height: 700px;'></div>
-                    <div class="row">
-                        <form class="column justify-center text-center align-center gap-10" id="search-column">
-                            <label for="setMarker"></label>
-                            <input class="fontSizeMed" type="text" name="setMarker" id="setMarker" placeholder="City, State">
-                            <img id="searchMarkerButton" src="images/search-icon3.png" alt="magnifying glass search button">
-                        </form>
+                        <div class="row shrink">
+                            <form class="column justify-center text-center align-center gap-10" id="search-column">
+                                <label for="setMarker"></label>
+                                <input class="fontSizeMed" type="text" name="setMarker" id="setMarker"
+                                       placeholder="City, State">
+                                <img id="searchMarkerButton" src="images/search-icon3.png"
+                                     alt="magnifying glass search button">
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <div class="row four-day-title justify-center text-center shrink">
-                    <h2>FOUR DAY FORECAST</h2>
-                </div>
-                <div class="row four-day-row shrink justify-center text-center" id="forecastDiv">
-                    <div class="column weather-card"></div>
-                    <div class="column weather-card"></div>
-                    <div class="column weather-card"></div>
-                    <div class="column weather-card"></div>
+<!--four day forecast starts-->
+                    <div class="row four-day-title justify-center text-center">
+                        <h2>FOUR DAY FORECAST</h2>
+                    </div>
+                    <div class="row four-day-row shrink justify-center text-center" id="forecastDiv">
+                        <div class="column weather-card"></div>
+                        <div class="column weather-card"></div>
+                        <div class="column weather-card"></div>
+                        <div class="column weather-card"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
-<!--<div class="page-wrapper justify-center align-center dflex gap-10">-->
-<!--    <div class="container blankContainer ">-->
-<!--        <div class="row">-->
-<!--            <div class="column justify-center align-center text-center">-->
-<!--                <h1>Pushes things down</h1>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <header class="container headerContainer grow ">-->
-<!--        <div class="row">-->
-<!--            <div class="column justify-center align-center text-center">-->
-<!--                <h1 class="white-text fontSizeXLarge">Marc's 5 Day Forecast</h1>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </header>-->
-<!--    <section class="container justify-center align-center grow ">-->
-<!--        <div class="row hero-row justify-center">-->
-<!--            <img class="image" src="images/clouds-sky.gif" alt="clouds image">-->
-<!--            <div class="column todays-low-high justify-right align-center text-center shrink">-->
-<!--                <h2 class="white-text fontSizeLarge">Today</h2>-->
-<!--                <div class="row">-->
-<!--                    <div class="column">-->
-<!--                        <h3 class="white-text fontSizeMed">High</h3>-->
-<!--                        <p class="white-text fontSizeSmall">76°</p>-->
-<!--                    </div>-->
-<!--                    <div class="column">-->
-<!--                        <h3 class="white-text fontSizeMed">Low</h3>-->
-<!--                        <p class="white-text fontSizeSmall">76°</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="column todays-low-high justify-right align-center text-center">-->
-<!--                <h2 class="white-text fontSizeLarge">Forecast</h2>-->
-<!--                <div class="row grow justify-center align-center">-->
-<!--                    <img class="icon shrink" src="images/cloudy-icon.png" alt="cloudy_icon">-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="column justify-center align-center text-center">-->
-<!--                <h2 class="white-text fontSizeLarge">FIVE DAY FORECAST</h2>-->
-<!--                <div class="row" id="forecastDiv">-->
-                    <!--WEATHERCARDS ADDED HERE-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    <footer class="container footerContainer ">-->
-<!--        <div class="row">-->
-<!--            <div class="column justify-center align-center text-center">-->
-
-<!--                <div id='map' style='width: 100%; height: 400px;'></div>-->
-<!--                <div class="row">-->
-<!--                    <form class="column justify-center text-center align-center gap-10">-->
-<!--                        <label for="zoom">Set zoom:</label>-->
-<!--                        <input type="text" name="zoom" id="zoom">-->
-<!--                        <button id="zoomSubmit">Zoom</button>-->
-<!--                    </form>-->
-<!--                    <form class="column justify-center text-center align-center gap-10">-->
-<!--                        <label for="setMarker">Enter an address:</label>-->
-<!--                        <input type="text" name="setMarker" id="setMarker">-->
-<!--                        <button id="setMarkerButton">Set Marker!</button>-->
-<!--                    </form>-->
-<!--                    <form class="column justify-center text-center align-center gap-10">-->
-<!--                        <label for="noMoreMarkersButton">Click to make the markers vanish</label>-->
-<!--                        <button id="noMoreMarkersButton">Turn off markers!</button>-->
-<!--                    </form>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </footer>-->
-<!--</div>-->
 <script src="js/mapbox-geocoder-utils.js"></script>
-<script>
-    mapboxgl.accessToken = MAPBOX_API_TOKEN;
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/satellite-streets-v12', // style URL
-        center: [-98.489, 29.42692], // starting position [lng, lat]
-        zoom: 9, // starting zoom
-    });
-    // const codeupMarker = new mapboxgl.Marker()
-    //         .setLngLat([-98.48962, 29.42692])
-    //         .addTo(map)
-    // const codeupPopup = new mapboxgl.Popup()
-    //         .setHTML('<p class="popup">Codeup!</p>');
-    // codeupMarker.setPopup(codeupPopup);
-</script>
 <script src="js/mapbox-weather-map-project.js"></script>
 <script src="js/weather-map-project.js"></script>
 </body>

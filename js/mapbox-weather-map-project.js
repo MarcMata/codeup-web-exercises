@@ -1,18 +1,23 @@
-// function debounce(func, delay) {
-//     let timer;
-//     return function(...args) {
-//         const context = this;
-//         clearTimeout(timer);
-//         timer = setTimeout(() => func.apply(context, args), delay);
-//     };
-// }
+//map
+mapboxgl.accessToken = MAPBOX_API_TOKEN;
+const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/satellite-streets-v12', // style URL
+    center: [-98.489, 29.42692], // starting position [lng, lat]
+    zoom: 9, // starting zoom
+});
+//removes markers, in place before all markers are set
+function removeMarkers() {
+    const markers = document.querySelectorAll(".mapboxgl-marker");
+    if (markers) {
+        markers.forEach(marker => {
+            marker.remove();
+        });
+    }
+}
 
-// document.querySelector("#zoomSubmit").addEventListener('click', event => {
-//     event.preventDefault();
-//     map.setZoom(document.querySelector("#zoom").value);
-// });
 let markerCoords = []
-//stores the set marker button in a variable
+//when you hit the magnifying glass these events happen
 let setSearch = document.querySelector("#searchMarkerButton")
     setSearch.addEventListener('click', event=>{
     event.preventDefault();
@@ -20,6 +25,7 @@ let setSearch = document.querySelector("#searchMarkerButton")
     geocode(address, MAPBOX_API_TOKEN).then(coords=>{
         console.log(coords)
         //individually grabs the lat long and pushes them into an outside variable
+        removeMarkers()
         let mapboxLat = coords[1],
             mapboxLng = coords[0];
         markerCoords = [mapboxLat, mapboxLng]
@@ -34,41 +40,24 @@ let setSearch = document.querySelector("#searchMarkerButton")
         console.log(markerCoords[0])
         console.log(markerCoords[1])
         setSearch.addEventListener('click', event=>{
-           newMarker.remove();
         });
         weatherMapDaily(markerCoords[0], markerCoords[1])
         weatherMap5Day3Hour(markerCoords[0], markerCoords[1])
     });
 });
 
-// document.querySelector("#noMoreMarkersButton").addEventListener('click',event=> {
-//     event.preventDefault();
-//     document.querySelectorAll(".mapboxgl-marker").forEach(svg=>{
-//         svg.style.display = "none"
-//     });
-// });
-//
-//
-
-// create a variable to hold the reference of the previous marker
+//sets previous markers to null
 let previousMarker = null;
-
-// create a new event listener for the map
+//When you click on the map, it shows the weather
 map.on('click', function(event) {
+    removeMarkers();
     // get the latitude and longitude of the clicked point
     const latitude = event.lngLat.lat;
     const longitude = event.lngLat.lng;
 
-    // remove the previous marker if it exists
-    if (previousMarker !== null) {
-        previousMarker.remove();
-    }
-
-    // create a new marker at the clicked point
     const newMarker = new mapboxgl.Marker()
         .setLngLat([longitude, latitude])
         .addTo(map);
-
     // set the previous marker to the new marker
     previousMarker = newMarker;
 

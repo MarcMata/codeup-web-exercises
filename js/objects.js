@@ -167,9 +167,9 @@
      *   `showBookInfo` function.
      */
     function createBook (title, authorFirstName, authorLastName){
-        this.title = title;
         this.firstName = authorFirstName;
         this.lastName = authorLastName;
+
     }
 
    const newBooks = [];
