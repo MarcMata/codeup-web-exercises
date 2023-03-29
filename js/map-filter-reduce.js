@@ -44,9 +44,7 @@ const usersEmail = users.map(user => user.email)
 console.log(usersEmail)
 usersEmail.forEach(email => console.log(email));
 // Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
-const totalYears = users.reduce((total, years)=> {
-    return total + years.yearsOfExperience;
-}, 0);
+const totalYears = users.reduce((total, years)=> total + years.yearsOfExperience, 0);
 
 console.log(`The total years of all developers is ${totalYears}`)
 console.log(`The average of years of all developers is ${totalYears/users.length}`)
@@ -54,6 +52,15 @@ console.log(`The average of years of all developers is ${totalYears/users.length
 const longestEmail = users.reduce((longestEmail, person) => longestEmail.length < person.email.length ? person.email : longestEmail, "")
 console.log(longestEmail)
 // Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
-const usersNames = users.reduce((names, people)=> `${names} ${people.name},`, "");
+const usersNames = users.reduce((acc, people, index) => index+1 === users.length ? `${acc} ${people.name}.` : `${acc} ${people.name},`, "Your instructors are:");
 console.log(usersNames)
 
+let uniqueLanaguages= users.reduce((acc, user) => {
+    user.languages.forEach(function(language){
+        if(!acc.includes(language)){
+            acc.push(language);
+        }
+    });
+    return acc;
+}, []);
+console.log(uniqueLanaguages)
