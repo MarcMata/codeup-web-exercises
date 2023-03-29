@@ -110,7 +110,7 @@ const authorNames2 = books.map(book => {
         author:`${book.author.firstName} ${book.author.lastName}`
     }
 });
-// console.log(authorNames2)
+console.log(authorNames2)
 
 // --------------------------------------------
 
@@ -247,7 +247,7 @@ let averageHundredNums = aHundredNums.reduce((total, number, index, array)=> {
    }
 });
 
-console.log(averageHundredNums)
+// console.log(averageHundredNums)
 
 const total = aHundredNums.reduce((accumulator,currentValue, index) => {
     // console.log(`At ${index} the accumulator is ${accumulator} and the current value is ${currentValue}`)
@@ -274,21 +274,21 @@ const total = aHundredNums.reduce((accumulator,currentValue, index) => {
 // console.log(totalofOdds)
 
 const valueOfUsedCars = usedCars.reduce((acc, curr)=> acc + curr.price, 0);
-console.log(valueOfUsedCars)
+// console.log(valueOfUsedCars)
 
 // const valueOfUsedCars = usedCars.reduce((acc, curr) => {
 //     return acc + curr.price
 // }, 0);
 
 const totalMileage = cars.reduce((acc, curr)=> acc + curr.mileage,0);
-console.log(totalMileage)
+// console.log(totalMileage)
 
 const carMileage = cars.reduce((acc,car)=> {
     acc.push(car.mileage)
     return acc;
 }, [])
 
-console.log(carMileage)
+// console.log(carMileage)
 
 const carMileageHighest = cars.reduce((acc,car, index,array)=> {
     if (index === array.length -1){
@@ -300,7 +300,7 @@ const carMileageHighest = cars.reduce((acc,car, index,array)=> {
     }
 }, [])
 
-console.log(carMileageHighest)
+// console.log(carMileageHighest)
 
 const mileageReport = cars.reduce((acc, car, index, array) => {
    if (index === array.length - 1) {
@@ -321,4 +321,4 @@ const mileageReport = cars.reduce((acc, car, index, array) => {
    }
 }, []);
 
-console.log(mileageReport)
+// console.log(mileageReport)
