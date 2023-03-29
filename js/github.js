@@ -49,11 +49,40 @@ export const getGithubUserEvents = async(username) => {
         console.log(error);
     }
 }
+
 export const renderLastCommit = (user, parent) => {
     const element = document.createElement('div');
     element.classList.add("user-data")
     element.innerHTML = `
     <h2>${user.actor.display_login} last commit is ${user.created_at}</h2>
+    <button>Remove</button>
+    `;
+    element.querySelector('button').addEventListener('click', function(){
+        element.remove()
+    });
+    parent.appendChild(element)
+};
+
+export const getCommits = async(owner,repo) => {
+    try{
+        let response = await fetch(`https://api.github.com/repos/${owner}/${repo}/commits`)
+        let data = await response.json();
+        return data[0];
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const renderLastCommitTwo = (user, parent) => {
+    const element = document.createElement('div');
+    element.classList.add("user-card")
+    element.innerHTML = `
+        <div class="img-wrapper">
+          <img src="${user.author.avatar_url}" alt="User image" class="avatar">
+        </div>
+    <h2>${user.commit.author.name} </h2>
+        <p>Last commit: ${user.commit.author.date}</p>
+            <a href="${user.author.html_url}" target="_blank">Go to Profile</a>
     <button>Remove</button>
     `;
     element.querySelector('button').addEventListener('click', function(){
