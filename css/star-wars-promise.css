@@ -1,0 +1,69 @@
+.page-wrapper{
+    position: relative;
+    width: 100%;
+}
+.background-image{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    opacity: .7;
+    flex: 1 0 0;
+}
+body{
+    color: #ffffff;
+    width: 100%;
+}
+
+.user-card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    background-color: tan;
+    opacity: .9;
+}
+
+.img-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 9999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-wrapper img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.user-card h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.user-card a {
+}
+
+.row.align-center {
+    flex-wrap: wrap;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: bolder;
+}
+p, a {
+    font-size: 20px;
+    font-weight: bolder;
+}
