@@ -1,4 +1,4 @@
-import {setFavorite, patchFavorite} from "./movies.js";
+import {setFavorite, patchFavorite, removeMovie, getFavoriteByID, getFavorites, searchFavorite} from "./movies.js";
 
 (async()=>{
 
@@ -16,10 +16,26 @@ import {setFavorite, patchFavorite} from "./movies.js";
         console.log(result)
     });
 
-    let body = {
-        "rating": 2
-    }
-    let response = await patchFavorite(3, body)
+
+    //PATCHING a movie -- adjusting a value in a field
+    // let body = {
+    //     "rating": 2
+    // }
+    // let response = await patchFavorite(3, body)
+
+
     // let data = await response.json();
     // console.log(data);
+
+    //DELETE A MOVIE
+    // await removeMovie(3)
+
+    //get all the favorites
+    // let favorites = await getFavorites();
+    // console.log(favorites)
+    //getFavorite by ID
+    // let favorite = await getFavoriteByID(2)
+
+    let searched = await searchFavorite({genre: 'Comedy'})
+    console.log(searched)
 })();
